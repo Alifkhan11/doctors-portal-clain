@@ -1,0 +1,101 @@
+import React, { createContext, useEffect, useState } from "react";
+import {
+  FacebookAuthProvider,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  deleteUser,
+  getAuth,
+  onAuthStateChanged,
+  sendEmailVerification,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
+import app from "../firebase/firebase.config";
+
+export const AuthContex = createContext();
+const auth = getAuth(app);
+
+const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loding, setloding] = useState(true);
+
+  const googleprovaider=new GoogleAuthProvider()
+  const facebookprovaider=new FacebookAuthProvider()
+
+  const createuseremailpass = (email, password) => {
+    setloding(true);
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const signin = (email, password) => {
+    setloding(true);
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const logout = () => {
+    setloding(true);
+    return signOut(auth);
+  };
+
+  const updateuser = (userinfo) => {
+    return updateProfile(auth.currentUser, userinfo);
+  };
+
+
+  const emailvaryfication = ()=>{
+    setloding(true)
+    return sendEmailVerification(auth.currentUser)
+  }
+
+
+  const forgatepassword=(email)=>{
+    setloding(true)
+    return sendPasswordResetEmail(auth,email)
+  }
+
+  const removeuser=()=>{
+    setloding(true)
+    return deleteUser(auth.currentUser)
+  }
+
+  const googlelogin =()=>{
+    setloding(true)
+    return signInWithPopup(auth,googleprovaider)
+  }
+
+  const facebooklogin =()=>{
+    setloding(true)
+    return signInWithPopup(auth,facebookprovaider)
+  }
+
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log("user observing");
+      setUser(currentUser);
+      setloding(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const authinfo = {
+    createuseremailpass,
+    signin,
+    logout,
+    updateuser,
+    user,
+    loding,
+    emailvaryfication,
+    forgatepassword,
+    removeuser,
+    googlelogin,
+    facebooklogin
+  };
+  return <AuthContex.Provider value={authinfo}>{children}</AuthContex.Provider>;
+};
+
+export default AuthProvider;
