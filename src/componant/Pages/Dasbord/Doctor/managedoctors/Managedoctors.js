@@ -9,14 +9,14 @@ const Managedoctors = () => {
   const { data, isLoading, refetch } = useQuery({
     queryKey: ["/doctors"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/doctors`);
+      const res = await fetch(`https://doctors-portal-server-vert-phi.vercel.app/doctors`);
       const data = res.json();
       return data;
     },
   });
   const deleteddoctors = (doctor) => {
     console.log(doctor._id);
-    fetch(`http://localhost:5000/doctors/${doctor._id}`, {
+    fetch(`https://doctors-portal-server-vert-phi.vercel.app/doctors/${doctor._id}`, {
       method: "DELETE",
       headers: {
         authorizition: `bearer ${localStorage.getItem("accessToken")}`,

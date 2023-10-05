@@ -18,7 +18,7 @@ const navigate=useNavigate()
   const { data: specialty = [], isLoading } = useQuery({
     queryKey: ["/specialty"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/appointnmenspecialty`);
+      const res = await fetch(`https://doctors-portal-server-vert-phi.vercel.app/appointnmenspecialty`);
       const data = await res.json();
       return data;
     },
@@ -45,7 +45,7 @@ const navigate=useNavigate()
             img: imgdata.data.url,
           };
           // console.log(doctorsdata);
-          fetch("http://localhost:5000/doctors", {
+          fetch("https://doctors-portal-server-vert-phi.vercel.app/doctors", {
             method: "POST",
             headers: {
               "content-type": "application/json",
