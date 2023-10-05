@@ -22,8 +22,8 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loding, setloding] = useState(true);
 
-  const googleprovaider=new GoogleAuthProvider()
-  const facebookprovaider=new FacebookAuthProvider()
+  const googleprovaider = new GoogleAuthProvider()
+  const facebookprovaider = new FacebookAuthProvider()
 
   const createuseremailpass = (email, password) => {
     setloding(true);
@@ -45,30 +45,30 @@ const AuthProvider = ({ children }) => {
   };
 
 
-  const emailvaryfication = ()=>{
+  const emailvaryfication = () => {
     setloding(true)
     return sendEmailVerification(auth.currentUser)
   }
 
 
-  const forgatepassword=(email)=>{
+  const forgatepassword = (email) => {
     setloding(true)
-    return sendPasswordResetEmail(auth,email)
+    return sendPasswordResetEmail(auth, email)
   }
 
-  const removeuser=()=>{
+  const removeuser = () => {
     setloding(true)
     return deleteUser(auth.currentUser)
   }
 
-  const googlelogin =()=>{
+  const googlelogin = () => {
     setloding(true)
-    return signInWithPopup(auth,googleprovaider)
+    return signInWithPopup(auth, googleprovaider)
   }
 
-  const facebooklogin =()=>{
+  const facebooklogin = () => {
     setloding(true)
-    return signInWithPopup(auth,facebookprovaider)
+    return signInWithPopup(auth, facebookprovaider)
   }
 
 
