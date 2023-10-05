@@ -18,7 +18,11 @@ const navigate=useNavigate()
   const { data: specialty = [], isLoading } = useQuery({
     queryKey: ["/specialty"],
     queryFn: async () => {
+<<<<<<< Updated upstream
       const res = await fetch(`http://localhost:5000/appointnmenspecialty`);
+=======
+      const res = await fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/appointnmenspecialty`);
+>>>>>>> Stashed changes
       const data = await res.json();
       return data;
     },
@@ -45,7 +49,11 @@ const navigate=useNavigate()
             img: imgdata.data.url,
           };
           // console.log(doctorsdata);
+<<<<<<< Updated upstream
           fetch("http://localhost:5000/doctors", {
+=======
+          fetch("https://doctors-portal-server-kohl-gamma.vercel.app/doctors", {
+>>>>>>> Stashed changes
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -55,7 +63,7 @@ const navigate=useNavigate()
           })
             .then((res) => res.json())
             .then((result) => {
-              console.log(result);
+              // console.log(result);
               toast.success(`${data.name} is added successfully`);
               navigate("/dasbord/managedoctors");
             });

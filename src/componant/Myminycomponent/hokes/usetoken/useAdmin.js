@@ -7,12 +7,16 @@ const useAdmin=email=>{
     useEffect(()=>{
 
       if(email){
+<<<<<<< Updated upstream
         fetch(`http://localhost:5000/users/admin/${email}`)
+=======
+        fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/users/admin/${email}`)
+>>>>>>> Stashed changes
         .then(res=>res.json())
         .then(data=>{
             setisAdmin(data.isAdmin)
             setisadminlogin(false)
-            console.log(data);
+            // console.log(data);
         })
       }
     },[email])

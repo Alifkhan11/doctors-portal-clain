@@ -14,7 +14,11 @@ const AvailabailAppointnment = ({ selecteddate }) => {
 
   const { data:appointdata = [],refetch ,isLoading} = useQuery({
     queryKey: ["appointnmentoption",date],
+<<<<<<< Updated upstream
     queryFn:()=> fetch(`http://localhost:5000/appointnmentoption?date=${date}`)
+=======
+    queryFn:()=> fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/appointnmentoption?date=${date}`)
+>>>>>>> Stashed changes
     .then((res) =>
       res.json()
     ),

@@ -28,7 +28,11 @@ const Bookingmodal = ({ Tretnment, selecteddate, setTretnment ,refetch}) => {
       price
     };
 
+<<<<<<< Updated upstream
     fetch(`http://localhost:5000/bookings`, {
+=======
+    fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/bookings`, {
+>>>>>>> Stashed changes
       method: 'POST',
       headers: {
           'content-type': 'application/json'
@@ -37,7 +41,7 @@ const Bookingmodal = ({ Tretnment, selecteddate, setTretnment ,refetch}) => {
   })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.acknowledged) {
           setTretnment(null);
           toast.success("Booking confirmed");

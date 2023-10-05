@@ -6,14 +6,22 @@ const Allusers = () => {
   const { data: users = [],refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
+<<<<<<< Updated upstream
       const res = await fetch(`http://localhost:5000/users`);
+=======
+      const res = await fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/users`);
+>>>>>>> Stashed changes
       const data = res.json();
       return data;
     },
   });
 // console.log(localStorage.getItem("accessToken"));
   const hendelmakeadmin = (id) => {
+<<<<<<< Updated upstream
     fetch(`http://localhost:5000/users/admin/${id}`, {
+=======
+    fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/users/admin/${id}`, {
+>>>>>>> Stashed changes
       method: "PUT",
       headers:{
         authorizition:`bearer ${localStorage.getItem("accessToken")}`

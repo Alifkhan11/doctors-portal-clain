@@ -45,7 +45,11 @@ const Signup = () => {
 
 const saveuser=(name,email,password)=>{
   const user={name,email,password}
+<<<<<<< Updated upstream
   fetch(`http://localhost:5000/users`,{
+=======
+  fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/users`,{
+>>>>>>> Stashed changes
     method: 'POST',
     headers: {
         'content-type': 'application/json'
@@ -62,7 +66,11 @@ const saveuser=(name,email,password)=>{
 
 
 // const gettoken = email=>{
+<<<<<<< Updated upstream
 //   fetch(`http://localhost:5000/jwt?email=${email}`)
+=======
+//   fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/jwt?email=${email}`)
+>>>>>>> Stashed changes
 //   .then(res=>res.json())
 //   .then(data=>{
 //     if(data.accessToken){

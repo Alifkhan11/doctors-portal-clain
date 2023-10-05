@@ -9,14 +9,23 @@ const Managedoctors = () => {
   const { data, isLoading, refetch } = useQuery({
     queryKey: ["/doctors"],
     queryFn: async () => {
+<<<<<<< Updated upstream
       const res = await fetch(`http://localhost:5000/doctors`);
+=======
+      const res = await fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/doctors`);
+>>>>>>> Stashed changes
       const data = res.json();
       return data;
     },
   });
   const deleteddoctors = (doctor) => {
+<<<<<<< Updated upstream
     console.log(doctor._id);
     fetch(`http://localhost:5000/doctors/${doctor._id}`, {
+=======
+    // console.log(doctor._id);
+    fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/doctors/${doctor._id}`, {
+>>>>>>> Stashed changes
       method: "DELETE",
       headers: {
         authorizition: `bearer ${localStorage.getItem("accessToken")}`,
@@ -24,7 +33,7 @@ const Managedoctors = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.deletedCount>0) {
           toast.success("Doctors deleted successfully");
           refetch();
