@@ -6,15 +6,9 @@ import { Link } from "react-router-dom";
 const Myappointment = () => {
   const { user } = useContext(AuthContex);
   // console.log(localStorage.getItem('accessToken'));
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-  const url = `http://localhost:5000/bookings?email=${user?.email}`;
-=======
+
   const url = `https://doctors-portal-server-kohl-gamma.vercel.app/bookings?email=${user?.email}`;
->>>>>>> Stashed changes
-=======
-  const url = `https://doctors-portal-server-vert-phi.vercel.app/bookings?email=${user?.email}`;
->>>>>>> 1587ee4d5b30c8dcb0aadaa430c65229a54fa274
+
   // console.log(url);
   const { data: bookings = [] } = useQuery({
     queryKey: ["bookings", user?.email],

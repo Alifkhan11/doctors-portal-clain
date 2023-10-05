@@ -45,15 +45,9 @@ const Signup = () => {
 
 const saveuser=(name,email,password)=>{
   const user={name,email,password}
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-  fetch(`http://localhost:5000/users`,{
-=======
+
   fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/users`,{
->>>>>>> Stashed changes
-=======
-  fetch(`https://doctors-portal-server-vert-phi.vercel.app/users`,{
->>>>>>> 1587ee4d5b30c8dcb0aadaa430c65229a54fa274
+
     method: 'POST',
     headers: {
         'content-type': 'application/json'
@@ -70,15 +64,13 @@ const saveuser=(name,email,password)=>{
 
 
 // const gettoken = email=>{
-<<<<<<< HEAD
-<<<<<<< Updated upstream
+
 //   fetch(`http://localhost:5000/jwt?email=${email}`)
-=======
+
 //   fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/jwt?email=${email}`)
->>>>>>> Stashed changes
-=======
+
 //   fetch(`https://doctors-portal-server-vert-phi.vercel.app/jwt?email=${email}`)
->>>>>>> 1587ee4d5b30c8dcb0aadaa430c65229a54fa274
+
 //   .then(res=>res.json())
 //   .then(data=>{
 //     if(data.accessToken){

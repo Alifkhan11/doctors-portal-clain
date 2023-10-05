@@ -6,30 +6,18 @@ const Allusers = () => {
   const { data: users = [],refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-      const res = await fetch(`http://localhost:5000/users`);
-=======
+
       const res = await fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/users`);
->>>>>>> Stashed changes
-=======
-      const res = await fetch(`https://doctors-portal-server-vert-phi.vercel.app/users`);
->>>>>>> 1587ee4d5b30c8dcb0aadaa430c65229a54fa274
+
       const data = res.json();
       return data;
     },
   });
 // console.log(localStorage.getItem("accessToken"));
   const hendelmakeadmin = (id) => {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    fetch(`http://localhost:5000/users/admin/${id}`, {
-=======
+
     fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/users/admin/${id}`, {
->>>>>>> Stashed changes
-=======
-    fetch(`https://doctors-portal-server-vert-phi.vercel.app/users/admin/${id}`, {
->>>>>>> 1587ee4d5b30c8dcb0aadaa430c65229a54fa274
+
       method: "PUT",
       headers:{
         authorizition:`bearer ${localStorage.getItem("accessToken")}`

@@ -28,15 +28,9 @@ const Bookingmodal = ({ Tretnment, selecteddate, setTretnment ,refetch}) => {
       price
     };
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    fetch(`http://localhost:5000/bookings`, {
-=======
+
     fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/bookings`, {
->>>>>>> Stashed changes
-=======
-    fetch(`https://doctors-portal-server-vert-phi.vercel.app/bookings`, {
->>>>>>> 1587ee4d5b30c8dcb0aadaa430c65229a54fa274
+
       method: 'POST',
       headers: {
           'content-type': 'application/json'
