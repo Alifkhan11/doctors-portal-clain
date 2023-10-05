@@ -28,7 +28,7 @@ const Bookingmodal = ({ Tretnment, selecteddate, setTretnment ,refetch}) => {
       price
     };
 
-    fetch(`https://doctors-portal-server-vert-phi.vercel.app/bookings`, {
+    fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/bookings`, {
       method: 'POST',
       headers: {
           'content-type': 'application/json'

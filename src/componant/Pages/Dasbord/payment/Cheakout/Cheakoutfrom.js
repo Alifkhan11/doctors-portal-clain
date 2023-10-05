@@ -14,7 +14,7 @@ const Cheakoutfrom = ({ data }) => {
   console.log(data);
 
   useEffect(() => {
-    fetch("https://doctors-portal-server-vert-phi.vercel.app/create-payment-intent", {
+    fetch("https://doctors-portal-server-kohl-gamma.vercel.app/create-payment-intent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const Cheakoutfrom = ({ data }) => {
         email,
         bookingId: _id,
       };
-      fetch("https://doctors-portal-server-vert-phi.vercel.app/payments", {
+      fetch("https://doctors-portal-server-kohl-gamma.vercel.app/payments", {
         method: "POST",
         headers: {
           "content-type": "application/json",
