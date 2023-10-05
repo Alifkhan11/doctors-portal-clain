@@ -18,11 +18,15 @@ const navigate=useNavigate()
   const { data: specialty = [], isLoading } = useQuery({
     queryKey: ["/specialty"],
     queryFn: async () => {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       const res = await fetch(`http://localhost:5000/appointnmenspecialty`);
 =======
       const res = await fetch(`https://doctors-portal-server-kohl-gamma.vercel.app/appointnmenspecialty`);
 >>>>>>> Stashed changes
+=======
+      const res = await fetch(`https://doctors-portal-server-vert-phi.vercel.app/appointnmenspecialty`);
+>>>>>>> 1587ee4d5b30c8dcb0aadaa430c65229a54fa274
       const data = await res.json();
       return data;
     },
@@ -49,11 +53,15 @@ const navigate=useNavigate()
             img: imgdata.data.url,
           };
           // console.log(doctorsdata);
+<<<<<<< HEAD
 <<<<<<< Updated upstream
           fetch("http://localhost:5000/doctors", {
 =======
           fetch("https://doctors-portal-server-kohl-gamma.vercel.app/doctors", {
 >>>>>>> Stashed changes
+=======
+          fetch("https://doctors-portal-server-vert-phi.vercel.app/doctors", {
+>>>>>>> 1587ee4d5b30c8dcb0aadaa430c65229a54fa274
             method: "POST",
             headers: {
               "content-type": "application/json",

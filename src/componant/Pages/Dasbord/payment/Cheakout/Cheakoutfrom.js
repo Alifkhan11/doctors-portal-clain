@@ -14,11 +14,15 @@ const Cheakoutfrom = ({ data }) => {
   // console.log(data);
 
   useEffect(() => {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     fetch("http://localhost:5000/create-payment-intent", {
 =======
     fetch("https://doctors-portal-server-kohl-gamma.vercel.app/create-payment-intent", {
 >>>>>>> Stashed changes
+=======
+    fetch("https://doctors-portal-server-vert-phi.vercel.app/create-payment-intent", {
+>>>>>>> 1587ee4d5b30c8dcb0aadaa430c65229a54fa274
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -74,11 +78,15 @@ const Cheakoutfrom = ({ data }) => {
         email,
         bookingId: _id,
       };
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       fetch("http://localhost:5000/payments", {
 =======
       fetch("https://doctors-portal-server-kohl-gamma.vercel.app/payments", {
 >>>>>>> Stashed changes
+=======
+      fetch("https://doctors-portal-server-vert-phi.vercel.app/payments", {
+>>>>>>> 1587ee4d5b30c8dcb0aadaa430c65229a54fa274
         method: "POST",
         headers: {
           "content-type": "application/json",
